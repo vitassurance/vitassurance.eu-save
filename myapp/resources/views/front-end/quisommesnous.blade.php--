@@ -1,0 +1,83 @@
+@extends('template.front')
+
+@section('stylesheets')
+
+<style>
+.panel-body {
+	padding-top:0px;
+	padding-bottom: 0px;
+}
+  .breadcrumb {
+	color:#49464b;
+	padding-top: 5px;
+}
+
+.infos {
+	background-color: #f5f5f5;
+    
+    padding: 24px;
+}
+.on {
+    display: block;
+}
+ 
+.off {
+    display: none;
+}
+.uk-margin-bottom {
+    margin-bottom: 5px;
+    border: 1px solid rgba(0, 171, 219, 0.42);
+}
+</style>
+
+{{ Html::style('front-end/css/rating-min.css') }}
+
+@endSection
+
+@section('content')	
+	
+	<section class="">
+		<div class="container">
+			<div class="down-arrow-color"></div>
+			<div class="row text-center">
+				<h3 class="title">
+					<span class="title-head">A propos</span>
+				</h3>
+				<p align="left">
+						Qui sommes-nous : Un cabinet de gestion de patrimoine axé sur la proximité et la personnalisation des solutions proposées. Essayez nous vous comprendrez !!!<br/></p>
+<p align="left">
+612, c’est l’expertise et le conseil pour la gestion et l’optimisation de votre patrimoine au travers d’une activité qui englobe 6 domaines : L’IMMOBILIER, L’ASSURANCE, LA FINANCE, LES SERVICES BANCAIRES, LA FISCALITÉ, LE JURIDIQUE.<br/></p>
+<p align="left">
+612 a été fondée sur des valeurs fortes et pérennes qui l’animent au quotidien :<br/></p>
+
+<p align="left">
+<h4>L’INDÉPENDANCE</h4><br/>
+Nous tenons à cette liberté d’entreprendre. Elle nous permet de créer des partenariats sur-mesure et d’optimiser ainsi l’efficacité de chaque dossier.<br/></p>
+<p align="left">
+<h4>LA PROXIMITÉ</h4><br/>
+Être connu pour ce que l’on fait est une chose. Nous souhaitons aussi être connu pour ce que nous sommes : solidaires du présent comme de l’avenir de nos clients.<br/></p>
+<p align="left">
+<h4>LA RÉACTIVITÉ</h4><br/>
+La souplesse et la rapidité caractérisent notre manière de penser et d’agir. Une aptitude qui renforce notre efficacité.<br/>
+</p>
+<p align="left">
+<h4>LA TRANSPARENCE</h4><br/>
+Nous avons une règle d’or : la clarté en tout et pour tout. Rien de plus précieux que la confiance d’un client. </p>
+					
+			</div><!--/ Title row end -->
+
+			<div class="row">
+				<div class="row">
+
+				
+				
+
+				
+
+
+				</div>
+			</div><!--/ Content row end -->
+		</div><!--/ Container end -->
+	</section><!--/ News end -->
+
+	@endSection

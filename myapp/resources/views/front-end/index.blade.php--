@@ -1,0 +1,317 @@
+
+@extends('template.front')
+
+@section('stylesheets')
+
+{{ Html::style('front-end/css/bootstrap-select.min.css') }}
+
+<style>
+	.marginImage{
+		margin-top: 20px;
+	}
+</style>
+
+@endSection
+
+@section('content')
+
+<section class="news">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row text-center">
+				<h3 class="title">
+					Obtenir un devis Rapide et Gratuit
+					<span class="title-head">Quelle assurance recherchez-vous ?</span>
+				</h3>
+			</div>
+		</div>
+	</div>
+ 
+  <div class="container">
+	<div class="row">
+		<div class="col-md-8" align="center">
+          <div class="row">
+					@foreach($produits as $produit)
+			<div class="col-md-4 col-sm-8 col-xs-12" align="center">
+
+				<div class="ts-service-wrapper">
+				<a href="{{ url($produit->lien) }}" >
+					<div class="ts-service-icon-wrapper">
+						<span class="ts-service-icon"><i class="fa {{$produit->icon}}"></i></span>
+					</div>
+					</a>
+					<div class="ts-service-info">
+						<h3>{{$produit->titre}}</h3>
+						<p>{{$produit->description}}</p>
+					</div>
+				</div><!-- Service wrapper end -->
+			</div>
+@endforeach
+					@foreach($icones as $icone)
+			<div class="col-md-4 col-sm-8 col-xs-12" align="center">
+
+				<div class="ts-service-wrapper">
+				<a href="{{ url('produit_assurance/'.$icone->lien) }}" >
+					<div class="ts-service-icon-wrapper">
+						<span class="ts-service-icon"><i class="fa {{$icone->icon}}"></i></span>
+					</div>
+					</a>
+					<div class="ts-service-info">
+						<h3>{{$icone->titre}}</h3>
+						<p>{{$icone->description}}</p>
+					</div>
+				</div><!-- Service wrapper end -->
+			</div>
+@endforeach
+	
+
+			
+		  </div>
+		</div>
+		<div class="col-md-4" align="center">
+
+		  <h3 ><i style="color:#00abdb" class="fa fa-compass" aria-hidden="true"></i> Comparez vos devis d'assurances</h3>
+			<img class="marginImage" src="{{ asset('front-end/images/panda.png') }}" height="415" width="150" alt="">
+
+
+		</div>
+	</div>
+
+  </div>
+</section>
+
+
+<section id="facts" class="facts no-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 fact-text">
+					<h2 class="intro-title">
+						50 assureurs comparés et plus de 1500 agences locales
+						<span class="title-head"> POURQUOI CHOISIR {{$parametrage->logo}}</span>
+					</h2>
+					<p>
+						Le comparateur d’assurances <strong>www.messolutionsdassurances.com</strong> vous permet d’obtenir gratuitement plusieurs propositions de contrat à comparer. Pour cela, il vous suffit de cliquer sur le bouton « comparer » pour accéder à un formulaire dédié et répondre avec précision aux questions qui vous seront posées. Ces informations permettront aux assureurs de connaître votre situation actuelle, votre profil et vos besoins spécifiques.
+                        <br />
+						Une fois cette étape passée (2 min environ), la page de résultats sur laquelle figurent les devis d’assurance vous sera restituée sous la forme d’un tableau comparatif présentant des offres en ligne spécifiquement adaptées à votre profil et personnalisées en fonction de vos besoins.
+					</p>
+				
+
+				</div><!-- Col end -->
+
+				<div class="col-md-6">
+					<div class="facts-wrapper">
+						<div class="col-md-6 ts-facts">
+							<div class="ts-facts-icon">
+								<i class="fa fa-eur"></i>
+							</div>
+							<div class="ts-facts-content">
+								<h2 class="ts-facts-num"><span class="counterUp">100</span>%</h2>
+								<h3 class="ts-facts-title">Gratuit et sans engagement</h3>
+							</div>
+						</div><!-- Col end -->
+
+						<div class="col-md-6 ts-facts">
+							<div class="ts-facts-icon">
+								<i class="fa fa-users"></i>
+							</div>
+							<div class="ts-facts-content">
+								<h2 class="ts-facts-num"><span class="counterUp">97</span>%</h2>
+								<h3 class="ts-facts-title">Internautes satisfaits</h3>
+							</div>
+						</div><!-- Col end -->
+
+						<div class="col-md-6 ts-facts">
+							<div class="ts-facts-icon">
+								<i class="fa fa-heart"></i>
+							</div>
+							<div class="ts-facts-content">
+								<h2 class="ts-facts-num"><span class="counterUp">3000</span>K</h2>
+								<h3 class="ts-facts-title">Internautes nous font confiance</h3>
+							</div>
+						</div><!-- Col end -->
+
+						<div class="col-md-6 ts-facts">
+							<div class="ts-facts-icon">
+								<i class="fa fa-building-o"></i>
+							</div>
+							<div class="ts-facts-content">
+								<h2 class="ts-facts-num"><span class="counterUp">25</span></h2>
+								<h3 class="ts-facts-title">Compagnies d'assurances</h3>
+							</div>
+						</div>
+					</div> <!-- Facts end -->
+				</div><!-- Col end -->
+			</div><!--/ Content row end -->
+		</div><!--/ Container end -->
+	</section><!-- Facts end -->
+
+
+	<section class="">
+		<div class="container">
+			<div class="down-arrow-color"></div>
+			<div class="row text-center">
+				<h3 class="title">
+					Devis d'assurance en ligne
+					<span class="title-head">Comparer les assurances en ligne</span>
+				</h3>
+			</div><!--/ Title row end -->
+
+			<div class="row">
+				<div class="row">
+				@foreach($produits as $produit)
+				  <div class="col-sm-6 col-md-2">
+				    <div class="thumbnail">
+				      <p >
+				      	<h2 align="center"><i style="font-size:70px" class="fa {{$produit->icon}}"></i></h2>
+				      </p>
+				      <div class="caption" align="center">
+				        <h6>{{$produit->titre}}</h6>
+				        <p><a href="{{ url($produit->lien) }}" class="btn btn-primary" role="button"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Devis</a></p>
+				      </div>
+				    </div>
+				  </div>
+@endforeach
+
+@foreach($icones as $icone)
+				  <div class="col-sm-6 col-md-2">
+				    <div class="thumbnail">
+				      <p >
+				      	<h2 align="center"><i style="font-size:70px" class="fa {{$icone->icon}}"></i></h2>
+				      </p>
+				      <div class="caption" align="center">
+				        <h6>{{$icone->titre}}</h6>
+				        <p><a href="{{ url('produit_assurance/'.$icone->lien) }}" class="btn btn-primary" role="button"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Devis</a></p>
+				      </div>
+				    </div>
+				  </div>
+@endforeach
+				   
+
+
+
+				</div>
+			</div><!--/ Content row end -->
+		</div><!--/ Container end -->
+	</section><!--/ News end -->
+
+
+	<!-- Partners start -->
+	<section  class="news">
+		<div class="container">
+			<div class="row text-center">
+				<h3 class="title">
+					Compagnies d'assurances
+					<span class="title-head">Plus de 50 assureurs comparés</span>
+				</h3>
+			</div> <!-- Title row end -->
+
+			<div class="row">
+		      <div id="partners-carousel" class="col-sm-12 owl-carousel owl-theme text-center partners">
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner1.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner2.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner3.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner4.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner5.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner6.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner7.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner8.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner9.png" alt="client">
+		          </a>
+		        </figure>
+
+		         <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner10.png" alt="client">
+		          </a>
+		        </figure>
+
+		         <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner11.png" alt="client">
+		          </a>
+		        </figure>
+
+		         <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner12.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner13.png" alt="client">
+		          </a>
+		        </figure>
+
+		        <figure class="item partner-logo last">
+		          <a href="#">
+		            <img class="img-responsive" src="front-end/images/company/partner14.png" alt="client">
+		          </a>
+		        </figure>
+		        
+		      </div><!--/ Owl carousel end -->
+	    	</div><!--/ Content row end -->
+		</div><!--/ Container end -->
+	</section><!--/ Partners end -->
+
+
+
+@endSection
+
+@section('javascripts')
+
+{{ Html::script('front-end/js/bootstrap-select.js') }}
+
+<script>
+
+	$('.selectpicker').selectpicker({
+	  style: 'btn-info',
+	  size: 4
+	});
+
+</script>
+
+@endSection
